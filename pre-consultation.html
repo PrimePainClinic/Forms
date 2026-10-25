@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pre-consultation questionnaire | Prime Pain Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12324a; --teal:#1f8a8a; --teal-soft:#e6f3f3; --bg:#f5f7f9; --card:#fff;
+  --ink:#1b2733; --muted:#5c6b78; --line:#dde3e8; --err:#b3261e; --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+header{background:var(--navy);color:#fff;padding:20px 16px 18px}
+header .wrap{max-width:640px;margin:0 auto}
+header .brand{font-weight:700;letter-spacing:.02em;font-size:15px;opacity:.85}
+header h1{font-size:22px;margin:6px 0 4px;font-weight:700}
+header p{margin:0;font-size:14px;opacity:.85}
+.progress{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 16px 8px;border-bottom:1px solid var(--line)}
+.progress .wrap{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+.bar{flex:1;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--teal);transition:width .25s}
+main{max-width:640px;margin:0 auto;padding:16px 16px 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;margin-bottom:14px}
+.card h2{font-size:17px;margin:0 0 4px}
+.card .hint{font-size:14px;color:var(--muted);margin:0 0 14px}
+label.f{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+label.f:first-of-type{margin-top:4px}
+.opt{font-weight:400;color:var(--muted);font-size:13px}
+input[type=text],input[type=date],select,textarea{width:100%;font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+textarea{min-height:90px;resize:vertical}
+.q{padding:14px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0;padding-top:4px}
+.q .qt{font-weight:600;font-size:15px;margin-bottom:10px}
+.q .sub{font-weight:400;color:var(--muted);font-size:13px}
+.scale{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+.scale button{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:8px;height:44px;font:600 15px Inter,system-ui,sans-serif;color:var(--ink);cursor:pointer;padding:0;transition:transform .08s}
+.scale button:active{transform:scale(.94)}
+.scale button.sel{color:#fff;border-color:transparent}
+.scale.pct button{font-size:12px}
+.anchors{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px;gap:12px}
+.anchors span:last-child{text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font:500 15px Inter,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.q.missing .qt{color:var(--err)}
+.q.missing .scale button,.q.missing .chip{border-color:#e9b4b0}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.check input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--teal);flex:none}
+.btn{display:block;width:100%;border:0;border-radius:12px;background:var(--teal);color:#fff;font:700 17px Inter,system-ui,sans-serif;padding:16px;cursor:pointer}
+.send{text-decoration:none;text-align:center;margin-top:10px}.wa{background:#1f9d55}.em{background:var(--navy)}
+.link{display:block;margin:10px auto 0;background:none;border:0;color:var(--teal);font:600 14px Inter,system-ui,sans-serif;text-decoration:underline;cursor:pointer}
+.msg{font-size:14px;color:var(--err);margin:10px 0 0;min-height:1em}
+.hidden{display:none!important}
+.done{text-align:center;padding:34px 18px}
+.done .tick{width:64px;height:64px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;margin:0 auto 14px;font-size:34px;font-weight:700}
+.done h2{font-size:21px}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:18px 0 6px}
+.scores div{background:var(--bg);border-radius:10px;padding:12px}
+.scores b{display:block;font-size:24px;color:var(--navy)}
+.scores small{color:var(--muted);font-size:12px}
+footer{max-width:640px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:var(--muted)}
+.urgent{background:#fff6e5;border:1px solid #f0d7a6;border-radius:10px;padding:12px;font-size:13px;margin-bottom:14px}
+@media (max-width:380px){.scale{gap:3px}.scale button{height:40px;font-size:14px;border-radius:7px}.chip{padding:9px 12px;font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">PRIME PAIN CLINIC · Dr Ahmed Salama</div>
+  <h1>Pre-consultation questionnaire</h1>
+  <p>Please complete before your appointment. Takes about 4 minutes. At the end, send your answers to Dr Salama by WhatsApp or email.</p>
+</div></header>
+
+<div class="progress" id="progressWrap"><div class="wrap"><div class="bar"><span id="bar"></span></div><span id="ptext">0%</span></div></div>
+
+<main>
+<form id="form" novalidate>
+  <!-- Values set by tap buttons -->
+  <input type="hidden" name="nrs_average_7_days">
+  <input type="hidden" name="bpi_worst_24h">
+  <input type="hidden" name="bpi_least_24h">
+  <input type="hidden" name="bpi_average">
+  <input type="hidden" name="bpi_right_now">
+  <input type="hidden" name="relief_from_injection_percent">
+  <input type="hidden" name="int_general_activity">
+  <input type="hidden" name="int_mood">
+  <input type="hidden" name="int_walking_ability">
+  <input type="hidden" name="int_normal_work">
+  <input type="hidden" name="int_relations_with_others">
+  <input type="hidden" name="int_sleep">
+  <input type="hidden" name="int_enjoyment_of_life">
+  <input type="hidden" name="pain_sites">
+  <input type="hidden" name="pain_side">
+  <input type="hidden" name="radiates">
+  <input type="hidden" name="radiation_areas">
+  <input type="hidden" name="radiation_side">
+  <input type="hidden" name="worse_pain">
+
+  <section class="card">
+    <h2>About you</h2>
+    <p class="hint">So we can match your answers to your records.</p>
+    <label class="f" for="patient_name">Full name</label>
+    <input type="text" id="patient_name" name="patient_name" autocomplete="name" required>
+    <label class="f" for="dob">Date of birth</label>
+    <input type="date" id="dob" name="date_of_birth" required>
+    <label class="f" for="hosp">Hospital or patient number <span class="opt">(optional)</span></label>
+    <input type="text" id="hosp" name="hospital_number" autocomplete="off">
+  </section>
+
+  <input type="hidden" id="timepoint" name="timepoint" value="Pre-consultation">
+
+  <section class="card">
+    <h2>Where is your pain?</h2>
+    <p class="hint">Tell us where you feel your pain.</p>
+    <div class="q" data-field="pain_sites" data-chip data-multi data-req>
+      <div class="qt">Main area of pain <span class="sub">(tap all that apply)</span></div>
+      <div class="chips">
+        <button type="button" class="chip">Lower back</button><button type="button" class="chip">Neck</button><button type="button" class="chip">Upper / mid back</button><button type="button" class="chip">Buttock</button><button type="button" class="chip">Hip</button><button type="button" class="chip">Groin</button><button type="button" class="chip">Knee</button><button type="button" class="chip">Shoulder</button><button type="button" class="chip">Head / face</button><button type="button" class="chip">Chest wall / ribs</button><button type="button" class="chip">Abdomen</button><button type="button" class="chip">Pelvis</button><button type="button" class="chip">Arm / hand</button><button type="button" class="chip">Leg / foot</button><button type="button" class="chip">All over</button><button type="button" class="chip">Other</button>
+      </div>
+    </div>
+    <div class="q" data-field="pain_side" data-chip data-req>
+      <div class="qt">Which side?</div>
+      <div class="chips"><button type="button" class="chip">Left</button><button type="button" class="chip">Right</button><button type="button" class="chip">Both sides</button><button type="button" class="chip">Middle</button></div>
+    </div>
+    <label class="f" for="site_other">Describe the area in your own words <span class="opt">(optional)</span></label>
+    <input type="text" id="site_other" name="site_other" placeholder="e.g. left lower back into the buttock">
+  </section>
+
+  <section class="card">
+    <h2>Does your pain spread?</h2>
+    <p class="hint">Some pain travels away from where it starts, for example from the back down the leg, or from the neck down the arm.</p>
+    <div class="q" data-field="radiates" data-chip data-req>
+      <div class="qt">Does your pain spread (radiate) anywhere else?</div>
+      <div class="chips"><button type="button" class="chip">No</button><button type="button" class="chip">Yes</button></div>
+    </div>
+    <div id="radWrap" class="hidden">
+      <div class="q" data-field="radiation_areas" data-chip data-multi data-req-rad>
+        <div class="qt">Where does it spread to? <span class="sub">(tap all that apply)</span></div>
+        <div class="chips">
+          <button type="button" class="chip">Buttock</button><button type="button" class="chip">Groin</button><button type="button" class="chip">Front of thigh</button><button type="button" class="chip">Back of thigh</button><button type="button" class="chip">Below the knee</button><button type="button" class="chip">Into the foot</button><button type="button" class="chip">Shoulder</button><button type="button" class="chip">Upper arm</button><button type="button" class="chip">Below the elbow</button><button type="button" class="chip">Into the hand</button><button type="button" class="chip">Around the chest / ribs</button><button type="button" class="chip">Head</button><button type="button" class="chip">Other</button>
+        </div>
+      </div>
+      <div class="q" data-field="radiation_side" data-chip data-req-rad>
+        <div class="qt">Which side does it spread to?</div>
+        <div class="chips"><button type="button" class="chip">Left</button><button type="button" class="chip">Right</button><button type="button" class="chip">Both sides</button></div>
+      </div>
+      <div class="q" data-field="worse_pain" data-chip data-req-rad>
+        <div class="qt">Which pain is worse?</div>
+        <div class="chips"><button type="button" class="chip">The main pain</button><button type="button" class="chip">The pain that spreads</button><button type="button" class="chip">About the same</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Pain score</h2>
+    <p class="hint">Tap one number. 0 = no pain, 10 = worst pain imaginable.</p>
+    <div class="q" data-field="nrs_average_7_days" data-req>
+      <div class="qt">Overall, how bad has your pain been over the past 7 days?</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Pain intensity</h2>
+    <p class="hint">Rate your pain by tapping the number that best describes it.</p>
+    <div class="q" data-field="bpi_worst_24h" data-req><div class="qt">Your pain at its <u>worst</u> in the last 24 hours</div></div>
+    <div class="q" data-field="bpi_least_24h" data-req><div class="qt">Your pain at its <u>least</u> in the last 24 hours</div></div>
+    <div class="q" data-field="bpi_average" data-req><div class="qt">Your pain on <u>average</u></div></div>
+    <div class="q" data-field="bpi_right_now" data-req><div class="qt">How much pain you have <u>right now</u></div></div>
+  </section>
+
+
+  <section class="card">
+    <h2>Effect on daily life</h2>
+    <p class="hint">In the last 24 hours, how much has pain interfered with your… (0 = not at all, 10 = completely)</p>
+    <div class="q" data-field="int_general_activity" data-int data-req><div class="qt">General activity</div></div>
+    <div class="q" data-field="int_mood" data-int data-req><div class="qt">Mood</div></div>
+    <div class="q" data-field="int_walking_ability" data-int data-req><div class="qt">Walking ability</div></div>
+    <div class="q" data-field="int_normal_work" data-int data-req><div class="qt">Normal work (including housework and work outside the home)</div></div>
+    <div class="q" data-field="int_relations_with_others" data-int data-req><div class="qt">Relations with other people</div></div>
+    <div class="q" data-field="int_sleep" data-int data-req><div class="qt">Sleep</div></div>
+    <div class="q" data-field="int_enjoyment_of_life" data-int data-req><div class="qt">Enjoyment of life</div></div>
+  </section>
+
+  <section class="card">
+    <h2>Anything else?</h2>
+    <label class="f" for="comments">Comments for Dr Salama <span class="opt">(optional)</span></label>
+    <textarea id="comments" name="comments" placeholder="e.g. how long you have had the pain, what you hope to get from your appointment"></textarea>
+    <div class="urgent">This form is not monitored for emergencies. If you have new weakness, numbness, problems with bladder or bowel control, or severe new pain, call 999 or go to A&amp;E. For other urgent concerns call NHS 111.</div>
+    <label class="check"><input type="checkbox" name="consent" value="Yes" id="consent" required>
+      <span>I agree to send my answers to Dr Ahmed Salama (Prime Pain Clinic) to help with my care.</span></label>
+  </section>
+
+  <button class="btn" type="submit" id="submit">Finish</button>
+  <p class="msg" id="msg" role="alert"></p>
+</form>
+
+<section class="card done hidden" id="done">
+  <div class="tick">✓</div>
+  <h2>Almost done</h2>
+  <p>Now send your answers to Dr Salama. Choose one:</p>
+  <div class="scores" id="scores"></div>
+  <a class="btn send wa" id="waBtn" href="#" target="_blank" rel="noopener">Send via WhatsApp</a>
+  <a class="btn send em" id="emBtn" href="#">Send by email</a>
+  <p class="hint" style="margin-top:12px">Your message opens ready to go. <b>Press Send</b> in WhatsApp or your email app to finish.</p>
+  <button type="button" class="link" id="copyBtn">Copy my answers instead</button>
+  <button type="button" class="link" id="backBtn">Go back and change an answer</button>
+</section>
+</main>
+
+<footer>Pain intensity and interference items based on the Brief Pain Inventory (Short Form), © Charles S. Cleeland, PhD, Pain Research Group.</footer>
+
+<script>
+(function(){
+  // Where answers are sent - change these if needed
+  var WHATSAPP='447337439292';
+  var EMAIL='ahmed.salama@primepainclinic.com';
+  var MODE='pre';           // 'pre' or 'post'
+  var FORM_TITLE='Pre-consultation questionnaire';
+
+  var form=document.getElementById('form');
+  var colours=['#2e9d5b','#4aa556','#6aae4f','#8fb646','#b5ba3d','#d1b236','#e09d32','#e4842e','#e0672b','#d44a29','#c12f2a'];
+  function setVal(name,v){ form.querySelector('input[name="'+name+'"]').value=v; }
+  function getVal(name){ return form.querySelector('input[name="'+name+'"]').value; }
+
+  // Number scales
+  document.querySelectorAll('.q[data-field]:not([data-chip])').forEach(function(q){
+    var name=q.dataset.field, pct=q.hasAttribute('data-pct'), intf=q.hasAttribute('data-int');
+    var row=document.createElement('div'); row.className='scale'+(pct?' pct':'');
+    for(var i=0;i<=10;i++){
+      var b=document.createElement('button'); b.type='button';
+      var val=pct?i*10:i; b.textContent=val; b.dataset.v=val;
+      b.setAttribute('aria-label',pct?val+'%':String(val));
+      (function(b,i){ b.addEventListener('click',function(){
+        row.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');x.style.background='';});
+        b.classList.add('sel'); b.style.background=pct?colours[10-i]:colours[i];
+        setVal(name,b.dataset.v); q.classList.remove('missing'); progress();
+      });})(b,i);
+      row.appendChild(b);
+    }
+    var a=document.createElement('div'); a.className='anchors';
+    a.innerHTML=pct?'<span>0% no relief</span><span>100% complete relief</span>'
+      :intf?'<span>0 does not interfere</span><span>10 completely interferes</span>'
+      :'<span>0 no pain</span><span>10 as bad as you can imagine</span>';
+    q.appendChild(row); q.appendChild(a);
+  });
+
+  // Tap chips
+  var radWrap=document.getElementById('radWrap');
+  document.querySelectorAll('.q[data-chip]').forEach(function(q){
+    var name=q.dataset.field, multi=q.hasAttribute('data-multi');
+    var chips=[].slice.call(q.querySelectorAll('.chip'));
+    chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); c.addEventListener('click',function(){
+      if(multi){ c.classList.toggle('sel'); }
+      else { chips.forEach(function(x){x.classList.remove('sel');}); c.classList.add('sel'); }
+      chips.forEach(function(x){x.setAttribute('aria-pressed',x.classList.contains('sel'));});
+      setVal(name,chips.filter(function(x){return x.classList.contains('sel');}).map(function(x){return x.textContent;}).join(', '));
+      q.classList.remove('missing');
+      if(name==='radiates') radWrap.classList.toggle('hidden',getVal('radiates')!=='Yes');
+      progress();
+    });});
+  });
+
+  var tp=document.getElementById('timepoint');
+  function radiates(){ return getVal('radiates')==='Yes'; }
+  function requiredQs(){
+    var qs=[].slice.call(document.querySelectorAll('.q[data-req]'));
+    if(radiates()) qs=qs.concat([].slice.call(document.querySelectorAll('.q[data-req-rad]')));
+    return qs;
+  }
+  function textFields(){ return [form.patient_name,form.date_of_birth].concat(MODE==='post'?[tp]:[]); }
+  function progress(){
+    var items=requiredQs(), done=items.filter(function(q){return getVal(q.dataset.field)!=='';}).length;
+    var tf=textFields(); done+=tf.filter(function(f){return f.value.trim()!=='';}).length;
+    var total=items.length+tf.length, p=Math.round(done/total*100);
+    document.getElementById('bar').style.width=p+'%'; document.getElementById('ptext').textContent=p+'%';
+  }
+  form.addEventListener('input',progress);
+  form.addEventListener('change',progress);
+
+  function mean(arr){ return arr.reduce(function(s,x){return s+x;},0)/arr.length; }
+  function r1(x){ return Math.round(x*10)/10; }
+  function d(v){ if(!v) return '-'; var x=v.split('-'); return x.length===3?x[2]+'/'+x[1]+'/'+x[0]:v; }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var msg=document.getElementById('msg'); msg.textContent='';
+    var firstBad=null;
+    textFields().forEach(function(f){ if(!f.value.trim()){ f.style.borderColor='var(--err)'; firstBad=firstBad||f; } else f.style.borderColor=''; });
+    requiredQs().forEach(function(q){ if(getVal(q.dataset.field)===''){ q.classList.add('missing'); firstBad=firstBad||q; } });
+    if(firstBad){ msg.textContent='Please answer the questions highlighted in red.'; firstBad.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+    if(!form.consent.checked){ msg.textContent='Please tick the box to agree to your answers being sent.'; form.consent.focus(); return; }
+
+    var f=getVal;
+    var sev=['bpi_worst_24h','bpi_least_24h','bpi_average','bpi_right_now'].map(function(n){return +f(n);});
+    var intf=['int_general_activity','int_mood','int_walking_ability','int_normal_work','int_relations_with_others','int_sleep','int_enjoyment_of_life'].map(function(n){return +f(n);});
+    var sevS=r1(mean(sev)), intS=r1(mean(intf)), nrs=f('nrs_average_7_days'), rel=MODE==='post'?f('relief_from_injection_percent'):'';
+    var name=form.patient_name.value.trim();
+
+    var lines=[
+      'PRIME PAIN CLINIC - '+FORM_TITLE,
+      'Name: '+name,
+      'DOB: '+d(form.date_of_birth.value),
+      'Hospital no: '+(form.hospital_number.value.trim()||'-')
+    ];
+    if(MODE==='post'){
+      lines.push('Time since procedure: '+tp.value);
+      lines.push('Procedure: '+(form.procedure.value||'Not sure'));
+      lines.push('Procedure date: '+d(form.injection_date.value));
+    }
+    lines.push('');
+    lines.push('Pain site: '+f('pain_sites')+' ('+f('pain_side')+')');
+    var so=form.site_other.value.trim(); if(so) lines.push('Patient description: '+so);
+    if(radiates()){
+      lines.push('Radiation: Yes - '+f('radiation_areas')+' ('+f('radiation_side')+')');
+      lines.push('Worse pain: '+f('worse_pain'));
+    } else lines.push('Radiation: No');
+    lines.push('');
+    lines.push('NRS (past 7 days): '+nrs+'/10');
+    lines.push('BPI severity: worst '+f('bpi_worst_24h')+', least '+f('bpi_least_24h')+', average '+f('bpi_average')+', now '+f('bpi_right_now')+' = mean '+sevS);
+    if(rel!=='') lines.push('Relief from procedure: '+rel+'%');
+    lines.push('BPI interference: activity '+f('int_general_activity')+', mood '+f('int_mood')+', walking '+f('int_walking_ability')+', work '+f('int_normal_work')+', relations '+f('int_relations_with_others')+', sleep '+f('int_sleep')+', enjoyment '+f('int_enjoyment_of_life')+' = mean '+intS);
+    var c=form.comments.value.trim(); if(c){ lines.push(''); lines.push('Comments: '+c); }
+    lines.push(''); lines.push('Completed: '+new Date().toLocaleString('en-GB'));
+    var text=lines.join('\n');
+    var subject=FORM_TITLE+' - '+name+(MODE==='post'?' - '+tp.value+' post procedure':'');
+    document.getElementById('waBtn').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(text);
+    document.getElementById('emBtn').href='mailto:'+EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(text.replace(/\n/g,'\r\n'));
+    window._painText=text;
+
+    var s='<div><b>'+nrs+'</b><small>Pain score (0-10)</small></div><div><b>'+sevS+'</b><small>Pain intensity</small></div><div><b>'+intS+'</b><small>Effect on daily life</small></div>';
+    if(rel!=='') s+='<div><b>'+rel+'%</b><small>Relief</small></div>';
+    document.getElementById('scores').innerHTML=s;
+    form.classList.add('hidden'); document.getElementById('progressWrap').classList.add('hidden');
+    document.getElementById('done').classList.remove('hidden'); window.scrollTo(0,0);
+  });
+
+  document.getElementById('backBtn').addEventListener('click',function(){
+    document.getElementById('done').classList.add('hidden'); form.classList.remove('hidden');
+    document.getElementById('progressWrap').classList.remove('hidden'); window.scrollTo(0,0);
+  });
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var b=this; (navigator.clipboard?navigator.clipboard.writeText(window._painText):Promise.reject())
+      .then(function(){b.textContent='Copied - paste into a message to Dr Salama';})
+      .catch(function(){prompt('Copy your answers:',window._painText);});
+  });
+  progress();
+})();
+</script>
+</body>
+</html>
